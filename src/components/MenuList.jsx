@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MenuList = ({ menuItems }) => {
   return (
@@ -6,7 +7,7 @@ const MenuList = ({ menuItems }) => {
       <ul>
         {menuItems.map((menuItem) => (
           <li className="menu-item" key={menuItem.title}>
-            {menuItem.title}
+            <Link to={`${menuItem.url}`}>{menuItem.title}</Link>
           </li>
         ))}
       </ul>
