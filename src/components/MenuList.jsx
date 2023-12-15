@@ -1,12 +1,12 @@
 import React from "react";
 
-const MenuList = ({ menu }) => {
+const MenuList = ({ menuItems }) => {
   return (
     <nav>
       <ul>
-        {menu.map((menuItem) => (
-          <li className="menu-item" key={menuItem.id}>
-            {menuItem.name}
+        {menuItems.map((menuItem) => (
+          <li className="menu-item" key={menuItem.title}>
+            {menuItem.title}
           </li>
         ))}
       </ul>
