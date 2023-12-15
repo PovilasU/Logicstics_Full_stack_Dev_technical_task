@@ -10,7 +10,7 @@ import MenuItemPage from "./pages/MenuItemPage";
 import "./App.css";
 
 const App = () => {
-  const [drivers, setDrivers] = useState(driversData);
+  const [drivers, setDrivers] = useState(driversData.data);
   const [menuItems, setMenuItems] = useState(menuData);
 
   useEffect(() => {
@@ -18,23 +18,21 @@ const App = () => {
   }, []);
 
   const handleSearch = (searchTerm) => {
-    const filteredDrivers = driversData.filter(
+    const filteredDrivers = driversData.data.filter(
       (driver) =>
         driver.surname.toLowerCase().includes(searchTerm.toLowerCase()) ||
         driver.vehicleRegistration
           .toLowerCase()
           .includes(searchTerm.toLowerCase())
     );
+
     setDrivers(filteredDrivers);
   };
-
-  console.log(menuItems);
 
   return (
     <Router>
       <div>
         <Header />
-        {/* <MenuList menuItems={menuItems} /> */}
         <MenuList menuItems={menuItems.data} />
         <Routes>
           <Route path="/menu/:id" element={<MenuItemPage />} />
@@ -42,8 +40,8 @@ const App = () => {
             path="/"
             element={
               <>
-                {/* <SearchBox onSearch={handleSearch} /> */}
-                <DriverList drivers={drivers.data} />
+                <SearchBox onSearch={handleSearch} />
+                <DriverList drivers={drivers} />
               </>
             }
           />
