@@ -4,7 +4,7 @@ const DriverList = ({ drivers }) => {
   return (
     <div className="driver-list">
       {drivers.map((driver) => (
-        <div className="driver" key={driver.id}>
+        <div className="driver" key={driver.vehicleRegistration}>
           <h2>
             {driver.forename} {driver.surname}
           </h2>

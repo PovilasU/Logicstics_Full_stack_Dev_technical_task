@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const SearchBox = ({ onSearch }) => {
-  cost[(searchTerm, setSearchTerm)] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const handleSearch = () => {
     onSearch(searchTerm);
   };
