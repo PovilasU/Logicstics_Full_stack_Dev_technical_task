@@ -8,7 +8,7 @@ const DriverList = ({ drivers }) => {
           <h2>
             {driver.forename} {driver.surname}
           </h2>
-          <h2>{driver.surname}</h2>
+
           <p>Registration : {driver.vehicleRegistration}</p>
           <p>Total Acivity Time: TODO </p>
         </div>

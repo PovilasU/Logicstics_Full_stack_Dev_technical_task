@@ -8,7 +8,6 @@ import menuData from "./data/menu.json";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MenuItemPage from "./pages/MenuItemPage";
 import "./App.css";
-console.log(driversData);
 
 const App = () => {
   const [drivers, setDrivers] = useState(driversData);
@@ -29,11 +28,14 @@ const App = () => {
     setDrivers(filteredDrivers);
   };
 
+  console.log(menuItems);
+
   return (
     <Router>
       <div>
         <Header />
         {/* <MenuList menuItems={menuItems} /> */}
+        <MenuList menuItems={menuItems.data} />
         <Routes>
           <Route path="/menu/:id" element={<MenuItemPage />} />
           <Route
