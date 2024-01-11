@@ -7,14 +7,21 @@ const SearchBox = ({ onSearch }) => {
   };
 
   return (
-    <div className="search-box">
-      <input
-        type="text"
-        placeholder="Search drivers..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <button onClick={handleSearch}>Search</button>
+    <div className="row" style={{ marginBottom: "30px" }}>
+      <div className="col-md-6">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Search drivers by Vehicle registration..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
+      <div className="col-auto">
+        <button onClick={handleSearch} className="btn btn-primary">
+          Search
+        </button>
+      </div>
     </div>
   );
 };

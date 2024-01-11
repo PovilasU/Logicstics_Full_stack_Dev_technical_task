@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 
 const MenuList = ({ menuItems }) => {
   return (
-    <nav>
-      <ul>
+    <nav className="col-md-1">
+      <ul class="nav flex-column">
         {menuItems.map((menuItem) => (
-          <li className="menu-item" key={menuItem.title}>
-            <Link to={`${menuItem.url}`}>{menuItem.title}</Link>
+          <li className="nav-item" key={menuItem.title}>
+            <Link className="nav-link" to={`${menuItem.url}`}>
+              {menuItem.title}
+            </Link>
           </li>
         ))}
       </ul>
